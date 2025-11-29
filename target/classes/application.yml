@@ -1,0 +1,40 @@
+server:
+  servlet:
+    context-path: /api/v1.0
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/expensetracker
+    username: root
+    password: mysql
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  mail:
+    host: smtp-relay.brevo.com
+    port: 587
+    protocol: smtp
+    username: ${BREVO_USERNAME}
+    password: ${BREVO_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          from: ${BREVO_FROM_EMAIL}
+
+jwt:
+  secret: af4bf886-3f65-46bb-9565-c61f92bc393d
+
+
+app:
+  backend:
+    url: http://localhost:8080
+
+

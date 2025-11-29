@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: ${POSTGRES_SQL_DB_URL}
+    username: ${POSTGRES_SQL_DB_USERNAME}
+    password: ${POSTGRES_SQL_DB_PASSWORD}
+
+
+app:
+  backend:
+    url: ${EXPENSE_TRACKER_BACKEND_URL}
