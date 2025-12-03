@@ -2,8 +2,6 @@ package com.techsmarthub.expensetracker.service;
 
 import com.techsmarthub.expensetracker.dto.ExpenseDTO;
 import com.techsmarthub.expensetracker.dto.IncomeDTO;
-import com.techsmarthub.expensetracker.entity.ProfileEntity;
-import com.techsmarthub.expensetracker.repository.IncomeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +22,8 @@ public class DashboardService {
         dashBoardData.put("totalIncomeForCurrentUser", incomeService.getTotalIncomeForCurrentUser());
         dashBoardData.put("totalExpensesForCurrentUser", expenseService.getTotalExpenseForCurrentUser());
         dashBoardData.put("totalBalance", incomeService.getTotalIncomeForCurrentUser().subtract(expenseService.getTotalExpenseForCurrentUser()));
+        dashBoardData.put("totalIncome", incomeService.getTotalIncomeForCurrentUser());
+        dashBoardData.put("totalExpense", expenseService.getTotalExpenseForCurrentUser());
         dashBoardData.put("latest5Incomes", latest5IncomesForCurrentUser);
         dashBoardData.put("latest5Expenses", latest5ExpensesForCurrentUser);
         return dashBoardData;
